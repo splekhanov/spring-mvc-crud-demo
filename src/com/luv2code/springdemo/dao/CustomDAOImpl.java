@@ -18,18 +18,33 @@ public class CustomDAOImpl implements CustomerDAO {
     private SessionFactory sessionFactory;
 
     @Override
+    @Transactional
     public List<Customer> getCustomers() {
 
-        //get the session
+        // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
-        //create query
-        Query theQuery = currentSession.createQuery("from Customer", Customer.class);
+        // create a query  ... sort by last name
+        Query<Customer> theQuery =
+                currentSession.createQuery("from Customer order by lastName",
+                        Customer.class);
 
-        //execute query
+        // execute query and get result list
         List<Customer> customers = theQuery.getResultList();
 
-        //return the results
+        // return the results
         return customers;
+    }
+
+    @Override
+    @Transactional
+    public void saveCustomer(Customer theCustomer) {
+
+        // get current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+
+        // save the customer ... finally LOL
+        currentSession.save(theCustomer);
+
     }
 }
