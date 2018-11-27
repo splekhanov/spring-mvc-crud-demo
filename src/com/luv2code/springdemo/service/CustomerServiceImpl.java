@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+    //inject customer Data Access Object
     @Autowired
     private CustomerDAO customerDAO;
 

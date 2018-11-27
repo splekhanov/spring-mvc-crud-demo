@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public class CustomDAOImpl implements CustomerDAO {
+public class CustomerDAOImpl implements CustomerDAO {
 
     //inject the session factory
     @Autowired
