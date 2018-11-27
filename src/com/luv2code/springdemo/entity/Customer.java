@@ -24,7 +24,7 @@ public class Customer {
         return id;
     }
 
-    public Customer(){
+    public Customer() {
 
     }
 

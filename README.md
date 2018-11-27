@@ -1,5 +1,5 @@
 # Spring MVC simple CRUD application
-Roughly built a small CRM application for training purposes.
+Roughly built a small CRUD application for training purposes.
 
 ## Frameworks
 * Spring MVC
